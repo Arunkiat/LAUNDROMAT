@@ -8,7 +8,6 @@ function Machine({ machine }) {
       alert(`เครื่อง ${machine.id} เหลือเวลาน้อยกว่า 1 นาที!`);
     }
     if (machine.status === 'in use' && machine.timeLeft === 0) {
-        // เมื่อเวลาที่เหลือเป็น 0 ให้เปลี่ยนสถานะเครื่องซักผ้ากลับเป็น 'available'
       machine.status = 'available';
       machine.timeLeft = 0;
         }
@@ -16,7 +15,6 @@ function Machine({ machine }) {
 
   const handleStartUsing = () => {
     if (machine.status === 'available') {
-      // เปลี่ยนสถานะเป็น 'in use' และตั้งเวลาที่เหลือเป็น 2 นาที (120 วินาที)
       machine.status = 'in use';
       machine.timeLeft = 70;
     }
